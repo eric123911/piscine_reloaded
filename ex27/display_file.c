@@ -1,22 +1,45 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strcmp.c                                      .::    .:/ .      .::   */
+/*   display_file.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: eschnell <eschnell@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/01 16:35:46 by eschnell     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/01 20:38:20 by eschnell    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/01 20:53:19 by eschnell     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/01 23:08:25 by eschnell    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include "main.h"
+
+int		ft_strlen(char *s)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	int	i;
+
+	i = 0;
+	while (*s++)
+		i++;
+	return (i);
+}
+
+void	ft_putstr_fd(int fd, char *s)
+{
+	write(fd, s, ft_strlen(s));
+}
+
+int		check_par(int ac)
+{
+	if (ac < 2)
 	{
-		s1++;
-		s2++;
+		ft_putstr_fd(2, "File name missing.");
+		return (1);
 	}
-	return (*s1 - *s2);
+	else if (ac > 2)
+	{
+		ft_putstr_fd(2, "Too many arguments.");
+		return (1);
+	}
+	else
+		return (0);
 }

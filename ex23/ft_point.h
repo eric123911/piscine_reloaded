@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strcmp.c                                      .::    .:/ .      .::   */
+/*   ft_point.h                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: eschnell <eschnell@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/01 16:35:46 by eschnell     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/01 20:38:20 by eschnell    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/01 18:25:11 by eschnell     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/01 18:36:25 by eschnell    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#ifndef FT_POINT_H
+# define FT_POINT_H
+
+typedef	struct	s_point
 {
-	while (*s1 && *s2 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
-}
+	int	x;
+	int	y;
+}				t_point;
+#endif

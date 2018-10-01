@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strcmp.c                                      .::    .:/ .      .::   */
+/*   main.c                                           .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: eschnell <eschnell@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/01 16:35:46 by eschnell     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/01 20:38:20 by eschnell    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/01 20:56:17 by eschnell     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/01 22:31:27 by eschnell    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include "main.h"
+
+int		main(int ac, char **av)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	int		fd;
+	int		ret;
+	char	buf[BUF_SIZE];
+
+	if (check_par(ac))
+		return (0);
+	else
 	{
-		s1++;
-		s2++;
+		fd = open(av[1], 0x0000);
+		if (fd >= 0)
+		{
+			while ((ret = read(fd, buf, BUF_SIZE)))
+				ft_putstr_fd(1, buf);
+			buf[ret] = '\0';
+			close(fd);
+		}
 	}
-	return (*s1 - *s2);
+	return (0);
 }
