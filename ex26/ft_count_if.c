@@ -6,7 +6,7 @@
 /*   By: eschnell <eschnell@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/01 20:45:34 by eschnell     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/01 22:27:12 by eschnell    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/02 11:49:29 by eschnell    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,11 +16,11 @@ int	ft_count_if(char **tab, int (*f)(char *))
 	int	i;
 
 	i = 0;
-	while (**tab)
+	while (*tab)
 	{
 		if (f(*tab) == 1)
 			i++;
-		*tab++;
+		tab++;
 	}
 	return (i);
 }

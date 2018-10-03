@@ -6,7 +6,7 @@
 /*   By: eschnell <eschnell@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/01 20:59:20 by eschnell     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/01 22:31:01 by eschnell    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/02 13:31:02 by eschnell    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,8 +20,8 @@
 # include <sys/uio.h>
 # include <fcntl.h>
 
-int		ft_strlen(char *s);
-void	ft_putstr_fd(int fd, char *s);
-int		check_par(int ac);
+int		ft_strlen(char *str);
+void	ft_putstr(char *str);
+int		check_params(int ac);
 
 #endif

@@ -6,16 +6,20 @@
 /*   By: eschnell <eschnell@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/01 20:40:22 by eschnell     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/01 22:26:02 by eschnell    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/02 11:48:25 by eschnell    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 void	ft_foreach(int *tab, int lenght, void (*f)(int))
 {
-	while (*tab)
+	int	i;
+
+	i = 0;
+	while (i < lenght)
 	{
 		f(*tab);
 		tab++;
+		i++;
 	}
 }
